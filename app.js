@@ -7,6 +7,32 @@ const motionPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
 let cards = [];
 let framePending = false;
 
+function createSnowfall() {
+  const snowfall = document.querySelector("#snowfall");
+  if (!snowfall) return;
+  if (motionPreference.matches) {
+    snowfall.replaceChildren();
+    return;
+  }
+
+  const fragment = document.createDocumentFragment();
+  const flakeCount = Math.min(64, Math.max(32, Math.round(window.innerWidth / 20)));
+
+  for (let index = 0; index < flakeCount; index += 1) {
+    const flake = makeElement("span", "snowflake");
+    flake.setAttribute("aria-hidden", "true");
+    flake.style.setProperty("--left", `${Math.random() * 100}%`);
+    flake.style.setProperty("--size", `${2 + Math.random() * 3}px`);
+    flake.style.setProperty("--drift", `${-45 + Math.random() * 90}px`);
+    flake.style.setProperty("--duration", `${9 + Math.random() * 13}s`);
+    flake.style.setProperty("--delay", `${-Math.random() * 22}s`);
+    flake.style.setProperty("--opacity", `${0.28 + Math.random() * 0.52}`);
+    fragment.append(flake);
+  }
+
+  snowfall.replaceChildren(fragment);
+}
+
 function makeElement(tag, className, text) {
   const element = document.createElement(tag);
 
@@ -160,6 +186,7 @@ function requestAnimation() {
 window.addEventListener("scroll", requestAnimation, { passive: true });
 window.addEventListener("resize", requestAnimation);
 motionPreference.addEventListener("change", requestAnimation);
+motionPreference.addEventListener("change", createSnowfall);
 
 function updateCountdown() {
   const now = new Date();
@@ -209,6 +236,7 @@ document.querySelector("#share").addEventListener("click", async () => {
 });
 
 async function init() {
+  createSnowfall();
   updateCountdown();
   window.setInterval(updateCountdown, 60000);
 

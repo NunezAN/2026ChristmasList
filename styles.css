@@ -1,9 +1,11 @@
 :root {
   color-scheme: dark;
-  --background: #101112;
-  --text: #f4f3ef;
-  --muted: #949694;
-  --accent: #cce6bf;
+  --background: #0d1110;
+  --text: #f4f1e9;
+  --muted: #9a9b91;
+  --accent: #d8b66a;
+  --evergreen: #9fb89a;
+  --cranberry: #a9434b;
 }
 
 * {
@@ -16,10 +18,40 @@ html {
 
 body {
   margin: 0;
-  background: var(--background);
+  background:
+    radial-gradient(ellipse at 12% 8%, #17312655, transparent 38rem),
+    radial-gradient(ellipse at 92% 58%, #451c2430, transparent 34rem),
+    var(--background);
   color: var(--text);
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
+}
+
+.snowfall {
+  position: fixed;
+  z-index: 30;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.snowflake {
+  position: absolute;
+  top: -8px;
+  left: var(--left);
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  background: #f4eee0;
+  opacity: var(--opacity);
+  box-shadow: 0 0 7px #d9e8e855;
+  animation: snowfall var(--duration) var(--delay) linear infinite;
+  will-change: transform;
+}
+
+@keyframes snowfall {
+  from { transform: translate3d(0, -2vh, 0); }
+  to { transform: translate3d(var(--drift), 105vh, 0); }
 }
 
 a {
@@ -67,17 +99,23 @@ button:focus-visible {
   height: 7px;
   width: 7px;
   border-radius: 50%;
-  background: var(--accent);
-  box-shadow: 0 0 18px #cce6bf55;
+  background: var(--cranberry);
+  box-shadow: 0 0 18px #a9434b77;
 }
 
 #share {
   padding: 10px 16px;
-  border: 1px solid #ffffff26;
+  border: 1px solid #d8b66a55;
   border-radius: 30px;
   background: transparent;
   color: var(--text);
   font-size: 12px;
+  transition: border-color .2s, background .2s;
+}
+
+#share:hover {
+  border-color: var(--accent);
+  background: #d8b66a12;
 }
 
 main {
@@ -91,7 +129,7 @@ main {
 }
 
 .eyebrow {
-  color: var(--accent);
+  color: var(--evergreen);
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 2.5px;
@@ -105,7 +143,7 @@ h1 {
 }
 
 h1 span {
-  color: #767c78;
+  color: #b99b68;
 }
 
 .intro-bottom {
@@ -116,7 +154,7 @@ h1 span {
 }
 
 #countdown {
-  color: #c4c7bf;
+  color: var(--accent);
   font-size: 12px;
 }
 
@@ -133,10 +171,12 @@ h1 span {
 .gift-section {
   position: relative;
   height: 115svh;
+  margin-bottom: -33svh;
 }
 
 .gift-section:last-child {
   height: 100svh;
+  margin-bottom: 0;
 }
 
 .gift-card {
@@ -216,7 +256,7 @@ h1 span {
   right: 0;
   padding: 24px;
   color: white;
-  background: #172019f2;
+  background: #14231cf5;
   backdrop-filter: blur(24px);
   border-radius: 28px 28px 0 0;
 }
@@ -226,7 +266,7 @@ h1 span {
   font-size: 9px;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: #bbc6b5;
+  color: #c3b47e;
 }
 
 h2 {
@@ -239,7 +279,7 @@ h2 {
 
 .details {
   margin: 12px 0 20px;
-  color: #c1c9bd;
+  color: #c7cec2;
   font-size: 12px;
   line-height: 1.5;
 }
@@ -252,6 +292,7 @@ h2 {
 }
 
 .price {
+  color: #e2c77f;
   font-size: 25px;
   font-weight: 700;
   letter-spacing: -1px;
@@ -265,8 +306,8 @@ h2 {
   min-height: 48px;
   padding: 14px 20px;
   border-radius: 30px;
-  background: var(--accent);
-  color: #152011;
+  background: var(--cranberry);
+  color: #fff8ef;
   font-size: 12px;
   font-weight: 700;
   text-decoration: none;
@@ -274,7 +315,7 @@ h2 {
 }
 
 .buy-button:hover {
-  background: #e0f3d7;
+  background: #c4585e;
   transform: translateY(-2px);
 }
 
@@ -377,5 +418,9 @@ footer span {
 
   .buy-button {
     transition: none;
+  }
+
+  .snowfall {
+    display: none;
   }
 }
