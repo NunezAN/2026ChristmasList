@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101112">
+  <title>Alex's Christmas List</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <a href="#" class="logo">ALEX'S CHRISTMAS LIST<span></span></a>
+    <button id="share" type="button">Share ↗</button>
+  </header>
+
+  <main>
+    <section class="intro">
+      <p class="eyebrow">CHRISTMAS COLLECTION</p>
+     <h1>Alex’s<br><span>Christmas List.</span></h1>
+
+      <div class="intro-bottom">
+        <p id="countdown"></p>
+        <span>SCROLL TO EXPLORE ↓</span>
+      </div>
+    </section>
+
+    <section
+      id="gifts"
+      class="gift-stack"
+      aria-label="Christmas wishlist"
+    ></section>
+
+    <p id="status" class="status" role="status">Loading your wishlist…</p>
+
+    <footer>
+      <p>Good gifts. Great company.</p>
+      <span>That’s the whole list.</span>
+    </footer>
+  </main>
+</body>
+</html>

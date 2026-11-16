@@ -1,0 +1,34 @@
+{
+  "title": "Alex's Christmas List",
+  "intro": "A few things Alex has been wishing for this Christmas.",
+  "currency": "USD",
+  "demo": false,
+  "gifts": [
+    {
+      "id": "not-yet-home-houndstooth-jacket",
+      "name": "Houndstooth Wool Jacket",
+      "category": "Style",
+      "description": "Size XL · 100% wool jacket with a houndstooth pattern.",
+      "size": "XL",
+      "price": 215,
+      "store": "Not Yet Home",
+      "url": "https://notyethome.co/products/houndstooth-wool-jacket",
+      "image": "https://notyethome.co/cdn/shop/files/11_1.png?v=1792530101",
+      "emoji": "🧥",
+      "featured": true
+    },
+    {
+      "id": "apple-homepod-mini-blue",
+      "name": "HomePod mini 2 — Blue",
+      "category": "Tech",
+      "description": "Color: Blue · A compact smart speaker for music and my Apple smart home.",
+      "color": "Blue",
+      "price": 149,
+      "store": "Apple",
+      "url": "https://www.apple.com/shop/buy-homepod/homepod-mini/blue",
+      "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/homepod-mini-select-blue-202110?fmt=jpeg&hei=890&qlt=95&wid=890",
+      "emoji": "🔊",
+      "featured": true
+    }
+  ]
+}
