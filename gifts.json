@@ -14,20 +14,40 @@
       "store": "Not Yet Home",
       "url": "https://notyethome.co/products/houndstooth-wool-jacket",
       "image": "https://notyethome.co/cdn/shop/files/11_1.png?v=1792530101",
-      "emoji": "🧥",
       "featured": true
     },
     {
       "id": "apple-homepod-mini-blue",
       "name": "HomePod mini 2 — Blue",
       "category": "Tech",
-      "description": "Color: Blue · A compact smart speaker for music and my Apple smart home.",
+      "description": "A compact smart speaker for music and my Apple smart home.",
       "color": "Blue",
       "price": 149,
       "store": "Apple",
       "url": "https://www.apple.com/shop/buy-homepod/homepod-mini/blue",
       "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/homepod-mini-select-blue-202110?fmt=jpeg&hei=890&qlt=95&wid=890",
-      "emoji": "🔊",
+      "featured": true
+    },
+    {
+      "id": "sam-raimi-spidey-mask",
+      "name": "Sam Raimi Spider-Man Mask",
+      "category": "Collectibles",
+      "description": "Adult wearable replica with a face shell, 3D webbing, and removable magnetic lenses. Size to be confirmed.",
+      "price": 135,
+      "store": "PipoSpidey",
+      "url": "https://www.pipospidey.com/collections/mask/products/sam-raimi-spidey-mask-adults-with-face-shell-3d-web-wearable-movie-prop-replica",
+      "image": "https://img.thesitebase.net/10595/10595439/products/ver_1/1763831827926.jpeg?height=0&min_height=0&width=1920",
+      "featured": true
+    },
+    {
+      "id": "captain-america-metal-shield",
+      "name": "Captain America Metal Shield",
+      "category": "Collectibles",
+      "description": "22-inch metal Captain America shield replica for display or cosplay.",
+      "price": 115,
+      "store": "eBay · Heirloom Armory",
+      "url": "https://www.ebay.com/itm/176902558628",
+      "image": "https://i.ebayimg.com/thumbs/images/g/Dq8AAOSwLXBny0Di/s-l500.jpg",
       "featured": true
     }
   ]
