@@ -161,6 +161,7 @@ function animateCards() {
     if (motionPreference.matches) {
       card.style.transform = "";
       card.style.filter = "";
+      card.style.opacity = "";
       return;
     }
 
@@ -170,10 +171,12 @@ function animateCards() {
       0,
       Math.min(1, distance / (window.innerHeight * 0.85)),
     );
+    const easedProgress = progress * progress * (3 - 2 * progress);
 
-    card.style.transform = `scale(${1 - progress * 0.055}) rotate(${-progress * 1.5}deg)`;
+    card.style.transform = `translate3d(0, ${-easedProgress * 12}px, 0) scale(${1 - easedProgress * 0.055})`;
 
-    card.style.filter = `brightness(${1 - progress * 0.15})`;
+    card.style.filter = `brightness(${1 - easedProgress * 0.9})`;
+    card.style.opacity = String(1 - easedProgress * 0.88);
   });
 }
 
