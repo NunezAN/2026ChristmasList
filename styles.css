@@ -113,6 +113,27 @@ button:focus-visible {
   transition: border-color .2s, background .2s;
 }
 
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#music-toggle {
+  padding: 10px 14px;
+  border: 1px solid #d8b66a55;
+  border-radius: 30px;
+  background: transparent;
+  color: var(--text);
+  font-size: 12px;
+  transition: border-color .2s, background .2s;
+}
+
+#music-toggle:hover {
+  border-color: var(--accent);
+  background: #d8b66a12;
+}
+
 #share:hover {
   border-color: var(--accent);
   background: #d8b66a12;
@@ -356,6 +377,16 @@ footer span {
 @media (max-width: 600px) {
   .header {
     padding: 22px 20px;
+  }
+
+  .header-actions {
+    gap: 6px;
+  }
+
+  #music-toggle,
+  #share {
+    padding: 9px 11px;
+    font-size: 11px;
   }
 
   main {

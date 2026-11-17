@@ -7,6 +7,46 @@ const motionPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
 let cards = [];
 let framePending = false;
 
+const musicTracks = [
+  "./assets/You're A Mean One, Mr. Grinch.mp3",
+  "./assets/I AM THE GRINCH featuring Fletcher Jones 0.mp3",
+];
+const music = new Audio();
+music.preload = "none";
+let currentTrack = 0;
+const musicToggle = document.querySelector("#music-toggle");
+
+function setMusicButton(isPlaying) {
+  musicToggle.textContent = isPlaying ? "Pause music ♪" : "Play music ♫";
+  musicToggle.setAttribute("aria-pressed", String(isPlaying));
+}
+
+function playCurrentTrack() {
+  const trackUrl = new URL(musicTracks[currentTrack], window.location.href).href;
+  if (music.src !== trackUrl) music.src = trackUrl;
+  return music.play();
+}
+
+music.addEventListener("ended", () => {
+  currentTrack = (currentTrack + 1) % musicTracks.length;
+  playCurrentTrack().catch(() => setMusicButton(false));
+});
+
+music.addEventListener("play", () => setMusicButton(true));
+music.addEventListener("pause", () => setMusicButton(false));
+
+musicToggle.addEventListener("click", () => {
+  if (!music.paused) {
+    music.pause();
+    return;
+  }
+
+  playCurrentTrack().catch(() => {
+    musicToggle.textContent = "Can't play music";
+    musicToggle.setAttribute("aria-pressed", "false");
+  });
+});
+
 function createSnowfall() {
   const snowfall = document.querySelector("#snowfall");
   if (!snowfall) return;
@@ -242,6 +282,11 @@ async function init() {
   createSnowfall();
   updateCountdown();
   window.setInterval(updateCountdown, 60000);
+
+  // Try autoplay; browsers that block sound leave the visible control ready.
+  playCurrentTrack().catch(() => {
+    setMusicButton(false);
+  });
 
   try {
     const response = await fetch("./gifts.json");
