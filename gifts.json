@@ -29,6 +29,19 @@
       "featured": true
     },
     {
+      "id": "chimi-01-core-brown",
+      "name": "01 Core Sunglasses",
+      "category": "Style",
+      "description": "Classic square acetate sunglasses with brown lenses and 100% UVA+UVB protection.",
+      "size": "One size",
+      "color": "Brown",
+      "price": 180,
+      "store": "CHIMI",
+      "url": "https://chimivision.com/product/01-core-brown/",
+      "image": "https://chimieyewear.centracdn.net/client/dynamic/images/1320_0c58b95566-20630-111-3-full.jpg",
+      "featured": true
+    },
+    {
       "id": "sam-raimi-spidey-mask",
       "name": "Sam Raimi Spider-Man Mask",
       "category": "Collectibles",

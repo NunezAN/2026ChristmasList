@@ -171,7 +171,7 @@ h1 span {
 .gift-section {
   position: relative;
   height: 115svh;
-  margin-bottom: -33svh;
+  margin-bottom: -8svh;
 }
 
 .gift-section:last-child {
@@ -332,11 +332,20 @@ footer {
   text-align: center;
 }
 
-footer p {
-  margin: 0 0 10px;
-  font-size: 26px;
-  font-weight: 700;
-  letter-spacing: -1px;
+.footer-gif {
+  width: min(100%, 498px);
+  aspect-ratio: 498 / 239;
+  margin: 0 auto 12px;
+  overflow: hidden;
+  -webkit-mask-image: radial-gradient(ellipse 76% 78% at center, #000 55%, transparent 100%);
+  mask-image: radial-gradient(ellipse 76% 78% at center, #000 55%, transparent 100%);
+}
+
+.footer-gif iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
 
 footer span {
